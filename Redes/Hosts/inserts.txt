@@ -1,0 +1,48 @@
+/************************************** ADMINISTRADOR ***********************************/
+
+INSERT INTO `administrador` (`localEmailContacto`, `dominioEmailContacto`, `contrasenia`, `fechaRegistroAdministrador`, `logueoActivo`) VALUES ('ela.ri.bag@gmail.com', 'gmail.com', 'Manchas401:)', '2016-12-05', '1'),('josepth_edge@hotmail.com', 'hotmail.com', 'Ja201', CURRENT_DATE, '0');
+
+UPDATE `administrador` SET `contrasenia` = 'Manchas401:)' WHERE `localEmailContacto` = 'ela.ri.bag@goutlook.com';
+
+
+INSERT INTO `administrador` (`localEmailContacto`, `dominioEmailContacto`, `contrasenia`, `fechaRegistroAdministrador`, `logueoActivo`) VALUES ('salmeanvicente@gmail.com', 'gmail.com', 'ALGO', CURRENT_DATE, '1'), ('ela.ri.bag@outlook.com', 'outlook.com', 'Ja201', '2016-12-02', '0');
+
+/********************* DISPOSITIVOS **************************/
+
+INSERT INTO `dispositivo` (`direccionIP`, `fechaRegistroHost`, `monitorizacionActiva`, `tipoDispositivo`, `versionSNMP`, `comunidadSNMP`, `ruta`, `min_cpu`, `max_cpu`, `avg_cpu`, `min_ram`, `max_ram`, `avg_ram`, `min_hdd`, `max_hdd`, `avg_hdd`, `min_temp`, `max_temp`, `avg_temp`, `min_volt`, `max_volt`, `avg_volt`, `ping_promedio`) VALUES ('127.0.0.1', CURRENT_DATE(), '1', 'Host', '2', 'publica', '/opt/Redes/Hosts/127_0_0_1_2552552550', '10', '30', '20', '15', '45', '27', '28', '56', '34', '10', '30', '21', '30', '60', '40', '100');
+
+
+INSERT INTO `dispositivo` (`direccionIP`, `fechaRegistroHost`, `monitorizacionActiva`, `tipoDispositivo`, `versionSNMP`, `comunidadSNMP`, `ruta`, `min_cpu`, `max_cpu`, `avg_cpu`, `min_ram`, `max_ram`, `avg_ram`, `min_hdd`, `max_hdd`, `avg_hdd`, `min_temp`, `max_temp`, `avg_temp`, `min_volt`, `max_volt`, `avg_volt`, `ping_promedio`) VALUES ('127.0.0.2', CURRENT_DATE(), '1', 'Host', '2', 'publica', '/opt/Redes/Hosts/127_0_0_2_2552552550', '10', '30', '20', '15', '45', '27', '28', '56', '34', '10', '30', '21', '30', '60', '40', '100');
+
+INSERT INTO `dispositivo` (`direccionIP`, `fechaRegistroHost`, `monitorizacionActiva`, `tipoDispositivo`, `versionSNMP`, `comunidadSNMP`, `ruta`, `min_cpu`, `max_cpu`, `avg_cpu`, `min_ram`, `max_ram`, `avg_ram`, `min_hdd`, `max_hdd`, `avg_hdd`, `min_temp`, `max_temp`, `avg_temp`, `min_volt`, `max_volt`, `avg_volt`, `ping_promedio`) VALUES ('127.0.0.3', CURRENT_DATE(), '1', 'Host', '2', 'publica', '/opt/Redes/Hosts//127_0_0_3_25525500', '10', '30', '20', '15', '45', '27', '28', '56', '34', '10', '30', '21', '30', '60', '40', '100');
+
+/******************* PERMISOS ADMINISTRADOR ****************/
+
+INSERT INTO `permisosAdministracion` (`localEmailContacto`, `dominioEmailContacto`, `direccionIP`, `permisoActivo`) VALUES ('ela.ri.bag@gmail.com', 'gmail.com', '127.0.0.1', '1');
+
+INSERT INTO `permisosAdministracion` (`localEmailContacto`, `dominioEmailContacto`, `direccionIP`, `permisoActivo`) VALUES ('ela.ri.bag@outlook.com', 'outlook.com', '127.0.0.2', '1');
+
+INSERT INTO `permisosAdministracion` (`localEmailContacto`, `dominioEmailContacto`, `direccionIP`, `permisoActivo`) VALUES ('josepth_edge@hotmail.com', 'hotmail.com', '127.0.0.3', '1');
+
+/************************ RESTRICCIONES *****************************/
+
+INSERT INTO `restricciones` (`direccionIP`, `campoMonitorizacion`, `valorAnticipacion`, 
+`tipoValorAnticipacion`, `alertaActiva`) VALUES ('127.0.0.1', 'max_cpu', '50', 'min', '1');
+
+
+INSERT INTO `restricciones` (`direccionIP`, `campoMonitorizacion`, `valorAnticipacion`, 
+`tipoValorAnticipacion`, `alertaActiva`) VALUES ('127.0.0.2', 'max_ram', '120', 'min', '1');
+
+
+INSERT INTO `restricciones` (`direccionIP`, `campoMonitorizacion`, `valorAnticipacion`, 
+`tipoValorAnticipacion`, `alertaActiva`) VALUES ('127.0.0.3', 'max_temp', '300', 'seg', '1');
+
+/************** BITACORA DE SUCESOS *************************/
+
+INSERT INTO `bitacoraSucesos` (`direccionIP`, `campoMonitorizacion`, `valorAnticipacion`, `tipoValorAnticipacion`, `fechaSuceso`, `fechaPrediccion`, `valorCapturado`) VALUES ('127.0.0.1', 'max_cpu', '50', 'min', CURRENT_DATE(), CURRENT_TIME(), '200');
+
+INSERT INTO `bitacoraSucesos` (`direccionIP`, `campoMonitorizacion`, `valorAnticipacion`, `tipoValorAnticipacion`, `fechaSuceso`, `fechaPrediccion`, `valorCapturado`) VALUES ('127.0.0.2', 'max_ram', '120', 'min', CURRENT_DATE(), CURRENT_TIME(), '150');
+
+
+
+
